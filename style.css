@@ -1,0 +1,260 @@
+:root {
+  --bg: #0f1117;
+  --panel: #171a23;
+  --card: #202431;
+  --gold: #f6c453;
+  --gold-dark: #b9892e;
+  --text: #ffffff;
+  --muted: #b8b8b8;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(246, 196, 83, 0.16), transparent 32rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(15, 17, 23, 0.88);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.nav-menu a.active,
+.nav-menu a:hover {
+  color: var(--gold);
+}
+
+.menu-toggle,
+.theme-toggle {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 9px 12px;
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+}
+
+main {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 34px 0 56px;
+}
+
+.section-shell {
+  margin: 0 0 24px;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: rgba(23, 26, 35, 0.82);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.hero {
+  min-height: 380px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+h1,
+h2 {
+  line-height: 1.05;
+}
+
+h1 {
+  color: var(--gold);
+  font-size: clamp(2.7rem, 9vw, 5.4rem);
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  margin-bottom: 18px;
+}
+
+.hero-copy,
+.section-shell p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: 0 auto 22px;
+  font-size: 1.1rem;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #17130a;
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card,
+.empty-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.card h3 {
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip,
+.empty-chip {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.donation-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.site-footer {
+  padding: 28px 16px 44px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 72px;
+    left: 16px;
+    right: 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--panel);
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .section-shell {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .donation-section {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
