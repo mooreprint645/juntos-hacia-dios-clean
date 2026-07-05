@@ -3,77 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juntos Hacia Dios | Clean</title>
-  <style>
-    :root {
-      --bg: #0f1117;
-      --card: #1a1d27;
-      --gold: #f6c453;
-      --text: #ffffff;
-      --muted: #b8b8b8;
-      --border: rgba(255, 255, 255, 0.1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(246, 196, 83, 0.14), transparent 34rem),
-        var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    main {
-      width: min(920px, 100%);
-      padding: 34px;
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      background: rgba(26, 29, 39, 0.88);
-      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
-      text-align: center;
-    }
-
-    .kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: 0.82rem;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    h1 {
-      color: var(--gold);
-      font-size: clamp(2.2rem, 8vw, 4.2rem);
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.7;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-  </style>
+  <title>Juntos Hacia Dios</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">Juntos Hacia Dios</a>
+      <button class="menu-toggle" id="menuToggle" type="button">☰</button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="#songs">Canciones</a>
+        <a href="#artists">Artistas</a>
+        <a href="#categories">Categorías</a>
+        <a href="#donations">Donaciones</a>
+        <a href="admin.html">Admin</a>
+        <button class="theme-toggle" id="themeToggle" type="button">🌙</button>
+      </div>
+    </nav>
+  </header>
+
   <main>
-    <p class="kicker">Nueva base limpia</p>
-    <h1>Juntos Hacia Dios</h1>
-    <p>
-      Esta es la versión limpia inicial. Primero validamos que el nuevo repositorio y GitHub Pages funcionen correctamente; después reconstruimos la página completa por bloques.
-    </p>
+    <section class="section-shell hero">
+      <div>
+        <p class="eyebrow">Cantos, acordes y recursos</p>
+        <h1>Juntos Hacia Dios</h1>
+        <p class="hero-copy">Una biblioteca para encontrar canciones, artistas, categorías, acordes y recursos de apoyo.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#songs">Ver canciones</a>
+          <a class="secondary-btn" href="#donations">Apoyar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell" id="songs">
+      <p class="eyebrow">Biblioteca</p>
+      <h2>Canciones recientes</h2>
+      <div class="grid-list" id="songsGrid">
+        <article class="empty-card">Cargando canciones...</article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="artists">
+      <p class="eyebrow">Ministerios</p>
+      <h2>Artistas</h2>
+      <div class="grid-list" id="artistsGrid">
+        <article class="empty-card">Cargando artistas...</article>
+      </div>
+    </section>
+
+    <section class="section-shell" id="categories">
+      <p class="eyebrow">Explorar</p>
+      <h2>Categorías</h2>
+      <div class="chips-list" id="categoriesGrid">
+        <span class="empty-chip">Cargando categorías...</span>
+      </div>
+    </section>
+
+    <section class="section-shell donation-section" id="donations">
+      <div>
+        <p class="eyebrow">Donaciones</p>
+        <h2>Apoya este proyecto</h2>
+        <p>Tu ayuda permite seguir compartiendo cantos, acordes y recursos para la comunidad.</p>
+      </div>
+      <a class="primary-btn" href="#">Ver información</a>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>Juntos Hacia Dios · Nueva versión limpia</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
